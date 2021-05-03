@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerOfHanoi", "TowerOfHanoi\TowerOfHanoi.csproj", "{2BA22627-08B0-4715-B5E7-149D6EC8E7D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerOfHanoiGUI", "TowerOfHanoiGUI\TowerOfHanoiGUI.csproj", "{3AA96E9C-D2EB-4CEF-91C8-B539D96224DF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2BA22627-08B0-4715-B5E7-149D6EC8E7D0} = {2BA22627-08B0-4715-B5E7-149D6EC8E7D0}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerOfHanoiConsole", "TowerOfHanoiConsole\TowerOfHanoiConsole.csproj", "{9F7EFA5D-3300-4EF4-AA93-4700834E9325}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2BA22627-08B0-4715-B5E7-149D6EC8E7D0} = {2BA22627-08B0-4715-B5E7-149D6EC8E7D0}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BA22627-08B0-4715-B5E7-149D6EC8E7D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BA22627-08B0-4715-B5E7-149D6EC8E7D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BA22627-08B0-4715-B5E7-149D6EC8E7D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BA22627-08B0-4715-B5E7-149D6EC8E7D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AA96E9C-D2EB-4CEF-91C8-B539D96224DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AA96E9C-D2EB-4CEF-91C8-B539D96224DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AA96E9C-D2EB-4CEF-91C8-B539D96224DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AA96E9C-D2EB-4CEF-91C8-B539D96224DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F7EFA5D-3300-4EF4-AA93-4700834E9325}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F7EFA5D-3300-4EF4-AA93-4700834E9325}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F7EFA5D-3300-4EF4-AA93-4700834E9325}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F7EFA5D-3300-4EF4-AA93-4700834E9325}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4912B293-281E-4017-AAC2-A77960D1D08E}
+	EndGlobalSection
+EndGlobal
