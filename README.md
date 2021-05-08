@@ -2,7 +2,7 @@
 
 ## Description
 
-Tower of Hanoi Console and WinForm applications written in C#.
+Tower of Hanoi Console and WinForms applications written in C#.
 
 ## Contributors
 
