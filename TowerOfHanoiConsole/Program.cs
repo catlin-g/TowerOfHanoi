@@ -1,15 +1,13 @@
-﻿using System;
-using TowerOfHanoi;
+﻿using TowerOfHanoi;
 
 namespace TowerOfHanoiConsole
 {
-	class Program
+	internal class Program
 	{
-		static void Main(string[] args)
+		private static void Main(string[] args)
 		{
-			var hanoiGame = new Whatever();
-			Console.WriteLine(hanoiGame.GetData());
-
+			var towerOfHanoi = new ToHGame(4);
+			towerOfHanoi.DrawToH();
 		}
 	}
 }
