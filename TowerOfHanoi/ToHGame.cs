@@ -7,10 +7,6 @@ namespace TowerOfHanoi
 	public class ToHGame
 	{
 		// Field Data
-		private Rod rodA;
-
-		private Rod rodB;
-		private Rod rodC;
 		private readonly int numOfDisks;
 		private static readonly List<Rod> rods = new List<Rod>();
 		private const int NumOfRods = 3;
@@ -25,18 +21,14 @@ namespace TowerOfHanoi
 		// Methods
 		private void InitialiseGame()
 		{
-			rodA = new Rod("A", numOfDisks);
-			rodB = new Rod("B", numOfDisks);
-			rodC = new Rod("C", numOfDisks);
+			rods.Add(new Rod("A", numOfDisks));
+			rods.Add(new Rod("B", numOfDisks));
+			rods.Add(new Rod("C", numOfDisks));
 
 			for (var diskSize = numOfDisks; diskSize > 0; diskSize--)
 			{
-				rodA.Push(new Disk(diskSize, AssignColour()));
+				rods.ElementAt(0).rod.Push(new Disk(diskSize, AssignColour()));
 			}
-
-			rods.Add(rodA);
-			rods.Add(rodB);
-			rods.Add(rodC);
 		}
 
 		private static string AssignColour() => "White";
@@ -49,7 +41,7 @@ namespace TowerOfHanoi
 			{
 				for (var rod = 0; rod < NumOfRods; rod++)
 				{
-					var disks = rods[rod].Count;
+					var disks = rods[rod].rod.Count;
 					var empty = numOfDisks - disks;
 
 					for (var left = numOfDisks - 1; left >= 0; left--)
@@ -60,7 +52,7 @@ namespace TowerOfHanoi
 						}
 						else
 						{
-							Console.Write(rods[rod].ElementAt(incre).Size > left ? rods[rod].ElementAt(incre).Size : ".");
+							Console.Write(rods[rod].rod.ElementAt(incre).Size > left ? rods[rod].rod.ElementAt(incre).Size : ".");
 						}
 					}
 
@@ -74,7 +66,7 @@ namespace TowerOfHanoi
 						}
 						else
 						{
-							Console.Write(rods[rod].ElementAt(incre).Size > right ? rods[rod].ElementAt(incre).Size : ".");
+							Console.Write(rods[rod].rod.ElementAt(incre).Size > right ? rods[rod].rod.ElementAt(incre).Size : ".");
 						}
 					}
 
