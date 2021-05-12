@@ -1,32 +1,15 @@
 ﻿namespace TowerOfHanoi
 {
-	internal class Disk
+	public class Disk
 	{
-		// Field Data
-		private int size;
+		public int Size { get; set; }
 
-		private string colour;
+		public string Colour { get; set; }
 
-		// Properties
-		public int Size
-		{
-			get => size;
-			set => size = value;
-		}
-
-		public string Colour
-		{
-			get => colour;
-			set => colour = value;
-		}
-
-		// Constructors
 		public Disk(int size, string colour)
 		{
-			this.size = size;
-			this.colour = colour;
+			Size = size;
+			Colour = colour;
 		}
-
-		// Methods
 	}
 }

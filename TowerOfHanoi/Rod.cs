@@ -2,39 +2,33 @@
 
 namespace TowerOfHanoi
 {
-	internal class Rod
+	public class Rod
 	{
-		// Field Data
-		private readonly string name;
-
-		private readonly int rodSize;
+		public Stack<Disk> stack;
+		private int numOfDisks;
 		private int emptySpace;
 
-		//private bool isEmpty;
-		private int numOfDisks;
-		public Stack<Disk> rod;
-
-		// Properties
-		public int EmptySpace
-		{
-			get => emptySpace;
-			set => emptySpace = rodSize - rod.Count;
-		}
+		public string Name { get; }
 
 		public int NumberOfDisks
 		{
 			get => numOfDisks;
-			set => numOfDisks = rod.Count;
+			set => numOfDisks = stack.Count;
 		}
 
-		// Constructors
-		public Rod(string name, int numOfDisks)
+		public int EmptySpace
 		{
-			rod = new Stack<Disk>();
-			this.name = name;
-			rodSize = numOfDisks;
+			get => emptySpace;
+			set => emptySpace = RodHeight - stack.Count;
 		}
 
-		// Methods
+		public int RodHeight { get; }
+
+		public Rod(string name, int rodHeight)
+		{
+			stack = new Stack<Disk>();
+			Name = name;
+			RodHeight = rodHeight;
+		}
 	}
 }

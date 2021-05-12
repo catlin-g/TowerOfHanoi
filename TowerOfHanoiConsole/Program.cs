@@ -1,4 +1,5 @@
-﻿using TowerOfHanoi;
+﻿using System;
+using TowerOfHanoi;
 
 namespace TowerOfHanoiConsole
 {
@@ -7,7 +8,7 @@ namespace TowerOfHanoiConsole
 		private static void Main(string[] args)
 		{
 			var towerOfHanoi = new ToHGame(4);
-			towerOfHanoi.DrawToH();
+			DrawToH.Draw(towerOfHanoi);
 		}
 	}
 }
