@@ -23,6 +23,6 @@ namespace TowerOfHanoi
 
 		public void Push(Disk disk) => stack.Push(disk);
 
-		public int Count(Rod rod) => rod.NumberOfDisks;
+		public int Count() => NumberOfDisks;
 	}
 }

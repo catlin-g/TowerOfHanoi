@@ -6,6 +6,7 @@ namespace TowerOfHanoi
 	public class ToHGame
 	{
 		private readonly List<Rod> rods = new();
+		public List<Rod> Rods => rods;
 		public int TowerHeight { get; }
 
 		private const int NumOfRods = 3;
@@ -30,7 +31,5 @@ namespace TowerOfHanoi
 		}
 
 		private string AssignColour() => "White";
-
-		public int Count(Rod rod) => rod.NumberOfDisks;
 	}
 }
