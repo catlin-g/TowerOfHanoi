@@ -1,6 +1,6 @@
 ﻿namespace TowerOfHanoi
 {
-	internal class Disk
+	public class Disk
 	{
 		public int Size { get; set; }
 

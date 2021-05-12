@@ -30,5 +30,7 @@ namespace TowerOfHanoi
 		}
 
 		private string AssignColour() => "White";
+
+		public int Count(Rod rod) => rod.NumberOfDisks;
 	}
 }

@@ -14,7 +14,7 @@ namespace TowerOfHanoiConsole
 			{
 				for (var rod = 0; rod < ToHGame.NumberOfRods; rod++)
 				{
-					var numOfDisks = game.Rods[rod].stack.Count;
+					//var numOfDisks = game.Rods[rod].stack.Count;
 					var empty = game.TowerHeight - numOfDisks;
 
 					for (var left = ToHGame.NumberOfRods; left >= 0; left--)
