@@ -5,12 +5,11 @@ namespace TowerOfHanoi
 {
 	public class ToHGame
 	{
-		public readonly List<Rod> rods = new();
-		private const int NumOfRods = 3;
-
+		private readonly List<Rod> rods = new();
 		public int TowerHeight { get; }
 
-		public int NumberOfRods => NumOfRods;
+		private const int NumOfRods = 3;
+		public static int NumberOfRods => NumOfRods;
 
 		public ToHGame(int numOfDisks)
 		{
@@ -24,13 +23,12 @@ namespace TowerOfHanoi
 			rods.Add(new Rod("B", TowerHeight));
 			rods.Add(new Rod("C", TowerHeight));
 
-			for (var numOfDisks = TowerHeight - 1; numOfDisks > 0; numOfDisks--)
+			for (var numOfDisks = 0; numOfDisks < TowerHeight; numOfDisks++)
 			{
-				rods.First().stack.Push(new Disk(numOfDisks, AssignColour()));
+				rods.First().Push(new Disk(TowerHeight - numOfDisks, AssignColour()));
 			}
-			//rods.ElementAt(1).stack.Push(new Disk(4, AssignColour()));
 		}
 
-		private static string AssignColour() => "White";
+		private string AssignColour() => "White";
 	}
 }

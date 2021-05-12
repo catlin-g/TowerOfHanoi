@@ -12,12 +12,12 @@ namespace TowerOfHanoiConsole
 
 			for (var row = game.TowerHeight; row > 0; row--)
 			{
-				for (var rod = 0; rod < game.NumberOfRods; rod++)
+				for (var rod = 0; rod < ToHGame.NumberOfRods; rod++)
 				{
-					var numOfDisks = game.rods[rod].stack.Count;
+					var numOfDisks = game.Rods[rod].stack.Count;
 					var empty = game.TowerHeight - numOfDisks;
 
-					for (var left = game.NumberOfRods; left >= 0; left--)
+					for (var left = ToHGame.NumberOfRods; left >= 0; left--)
 					{
 						//var test = (row == numOfDisks) && (numOfDisks < game.TowerHeight);
 						var test2 = row > (game.TowerHeight - empty);
