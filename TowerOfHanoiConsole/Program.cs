@@ -1,5 +1,4 @@
-﻿using System;
-using TowerOfHanoi;
+﻿using TowerOfHanoi;
 
 namespace TowerOfHanoiConsole
 {

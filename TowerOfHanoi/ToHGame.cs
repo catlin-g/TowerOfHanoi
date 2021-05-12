@@ -8,7 +8,9 @@ namespace TowerOfHanoi
 		public readonly List<Rod> rods = new();
 		private const int NumOfRods = 3;
 
-		public int TowerHeight{ get; }
+		public int TowerHeight { get; }
+
+		public int NumberOfRods => NumOfRods;
 
 		public ToHGame(int numOfDisks)
 		{
@@ -22,10 +24,11 @@ namespace TowerOfHanoi
 			rods.Add(new Rod("B", TowerHeight));
 			rods.Add(new Rod("C", TowerHeight));
 
-			for (var numOfDisks = TowerHeight; numOfDisks > 0; numOfDisks--)
+			for (var numOfDisks = TowerHeight - 1; numOfDisks > 0; numOfDisks--)
 			{
 				rods.First().stack.Push(new Disk(numOfDisks, AssignColour()));
 			}
+			//rods.ElementAt(1).stack.Push(new Disk(4, AssignColour()));
 		}
 
 		private static string AssignColour() => "White";
