@@ -10,7 +10,7 @@ namespace TowerOfHanoiConsole
 		{
 			var incre = 0;
 
-			for (var row = 0; row < game.TowerHeight; row++)
+			for (var row = game.TowerHeight; row > 0; row--)
 			{
 				for (var rod = 0; rod < game.TowerHeight - 1; rod++)
 				{
