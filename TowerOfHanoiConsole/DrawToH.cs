@@ -6,44 +6,50 @@ namespace TowerOfHanoiConsole
 {
 	internal class DrawToH
 	{
-		private List<string[,]> rodArrays = new();
+		private readonly List<string[,]> listOfRods = new();
 
-		public void GetRodsArray(ToHGame toHGame)
+		public void ToArrayOfRods(ToHGame toHGame)
 		{
 			var towerHeight = toHGame.TowerHeight;
-			var rodPerRow = 1;
+			var rodsPerRow = 1;
+			var baseSize = 1;
 
 			foreach (var rod in toHGame.Rods)
 			{
 				var rodArray = rod.RodToArray();
-				var temp = new string[towerHeight, (towerHeight * 2) + rodPerRow];
+				var tempArray = new string[towerHeight + baseSize, (towerHeight * 2) + rodsPerRow];
 
-				for (var row = 0; row < towerHeight; row++)
+				for (var row = 0; row < towerHeight + baseSize; row++)
 				{
-					for (var col = 0; col < (towerHeight * 2) + rodPerRow; col++)
+					for (var col = 0; col < (towerHeight * 2) + rodsPerRow; col++)
 					{
-						if (col == towerHeight)
+						if (col == towerHeight && row != towerHeight)
 						{
-							temp[row, col] = "|";
+							tempArray[row, col] = "|";
+						}
+						else if (row == towerHeight)
+						{
+							tempArray[row, col] = col == towerHeight ? rod.Name : "=";
 						}
 						else
 						{
-							temp[row, col] = (col >= towerHeight - rodArray[row]) && (towerHeight + rodArray[row] >= col) ? Convert.ToString(rodArray[row]) : "-";
+							var colFlag = (col >= towerHeight - rodArray[row]) && (towerHeight + rodArray[row] >= col);
+							tempArray[row, col] = colFlag ? Convert.ToString(rodArray[row]) : "-";
 						}
 					}
 				}
 
-				rodArrays.Add(temp);
+				listOfRods.Add(tempArray);
 			}
 		}
 
 		public void Draw(ToHGame toHGame)
 		{
-			GetRodsArray(toHGame);
+			ToArrayOfRods(toHGame);
 
-			for (var row = 0; row < toHGame.TowerHeight; row++)
+			for (var row = 0; row < toHGame.TowerHeight + 1; row++)
 			{
-				foreach (var rod in rodArrays)
+				foreach (var rod in listOfRods)
 				{
 					for (var col = 0; col < rod.GetLength(1); col++)
 					{
@@ -53,8 +59,6 @@ namespace TowerOfHanoiConsole
 				}
 				Console.WriteLine();
 			}
-
-			Console.WriteLine("====A=========B=========C====");
 		}
 	}
 }

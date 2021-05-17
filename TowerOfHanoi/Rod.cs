@@ -19,7 +19,7 @@ namespace TowerOfHanoi
 			var arr = new int[RodHeight];
 			var stackArray = Stack.ToArray();
 
-			for(var i = 0; i < stackArray.Length; i++)
+			for (var i = 0; i < stackArray.Length; i++)
 			{
 				arr[EmptySpace + i] = stackArray[i].Size;
 			}
@@ -37,8 +37,6 @@ namespace TowerOfHanoi
 		public int EmptySpace => RodHeight - Stack.Count;
 
 		public void Push(Disk disk) => Stack.Push(disk);
-
-		//public int Count() => NumberOfDisks;
 
 		public int GetDiskSize(int index) => Stack.ElementAt(index).Size;
 	}

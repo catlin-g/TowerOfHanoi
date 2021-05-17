@@ -6,10 +6,9 @@ namespace TowerOfHanoiConsole
 	{
 		private static void Main(string[] args)
 		{
-			var towerOfHanoi = new ToHGame(4);
-
-			var drawToH = new DrawToH();
-			drawToH.Draw(towerOfHanoi);
+			var towerOfHanoi1 = new ToHGame(7);
+			var drawGame1 = new DrawToH();
+			drawGame1.Draw(towerOfHanoi1);
 		}
 	}
 }
