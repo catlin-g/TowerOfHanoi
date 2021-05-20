@@ -39,5 +39,11 @@ namespace TowerOfHanoi
 		public void Push(Disk disk) => Stack.Push(disk);
 
 		public int GetDiskSize(int index) => Stack.ElementAt(index).Size;
+
+		public bool IsSource() => Name.Equals("A");
+
+		public bool IsDestination() => Name.Equals("B");
+
+		public bool IsAux() => Name.Equals("C");
 	}
 }
